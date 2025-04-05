@@ -1,20 +1,16 @@
-function mostrarlista(listaPokes){
+function mostrarlista(listapokes) {
     const app = document.getElementById("app");
-    app.innerHTML = "lista";
     let Pokes = "";
 
-    for (let i = 0; i < listaPokes.length; i++) {
-        let id = pokemones[i].url.split("/")[6];
+    for (let i = 0; i < listapokes.length; i++) {
+        let id = listapokes[i].url.split("/")[6];
         Pokes += `
-        <div class="c-lista-pokemon poke-${id}" onclick="mostrarDetalle('${pokemones[i].name}')">
+        <div class="c-lista-pokemon poke-${id}" onclick="mostrarDetalle('${listapokes[i].name}')">
             <p>#${id}</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" width="auto" height="60" loading="lazy" alt="${pokemones[i].name}">
-            <p>${pokemones[i].name}</p>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" width="auto" height="60" loading="lazy" alt="${listapokes[i].name}">
+            <p>${listapokes[i].name}</p>
         </div>`;
     }
-    seccion.innerHTML = Pokes;
+    app.innerHTML = Pokes;
     
-    /*app.appendChild(buscador);*/
-    app.appendChild(seccion);
-
 }
